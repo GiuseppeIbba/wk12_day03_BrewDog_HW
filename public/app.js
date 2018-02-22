@@ -1,8 +1,5 @@
 
 
-// const beer_Ul = document.createElement('ul');
-// document.body.appendChild(beer_Ul);
-
 
 const app = function () {
   const url = 'https://api.punkapi.com/v2/beers';
@@ -23,6 +20,15 @@ const app = function () {
     populatingBeerList(beers);
   }
 
+  const populatingBeerList = function(beers){
+    const beer_Ul = document.createElement('ul');
+    document.body.appendChild(beer_Ul);
+    beers.forEach(function(beer){
+    const beer_Li = document.createElement('li');
+    beer_Li.innerText = beer.name
+    beer_Ul.appendChild(beer_Li);
+    })
+  }
 
 
 
