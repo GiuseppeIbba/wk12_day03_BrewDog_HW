@@ -23,10 +23,20 @@ const app = function () {
   const populatingBeerList = function(beers){
     const beer_Ul = document.createElement('ul');
     document.body.appendChild(beer_Ul);
+
     beers.forEach(function(beer){
+
     const beer_Li = document.createElement('li');
-    beer_Li.innerText = beer.name
+    beer_Li.innerText = beer.name;
+
+    const beer_img = document.createElement('img');
+    const beer_img_p = document.createElement('p');
+    beer_img.src = beer.image_url;
+    beer_img.style.width = "80px";
     beer_Ul.appendChild(beer_Li);
+    beer_img_p.appendChild(beer_img);
+    beer_Ul.appendChild(beer_img_p);
+
     })
   }
 
