@@ -13,13 +13,16 @@ const app = function () {
     const request = new XMLHttpRequest();
     request.open("GET", url);
     request.addEventListener('load', callback);
-    request.send();
-    console.log(request);
+    request.send();  //am I sending the request or the server is sending me the request back?
   }
 
   const requestComplete = function(){
-    console.log("requestComplete is working");
+    if(this.status !== 200) return;
+    const jsonString = this.responseText;
+    const beers = JSON.parse(jsonString);
+    populatingBeerList(beers);
   }
+
 
 
 
