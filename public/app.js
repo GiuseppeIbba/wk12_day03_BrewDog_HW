@@ -56,6 +56,17 @@ const displayBeerYeast = function(beer, beer_Ul){
     beer_Ul.appendChild(yeast_Li);
 }
 
+const displayBeerMalt = function(beer, beer_Ul){
+  beer.ingredients.malt.forEach(function(malt){
+    const malt_Li = document.createElement('li');
+    malt_Li.innerText = malt.name;
+    beer_Ul.appendChild(malt_Li);
+  })
+}
+
+
+
+
 
 
 
